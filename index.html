@@ -3,88 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website - 6 Tabs</title>
+    <title>The Bridge | Full Mission Site</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .tabs {
-            display: flex;
-            background-color: #2c3e50;
-            flex-wrap: wrap;
-        }
-        .tabs label {
-            flex: 1;
-            padding: 18px 12px;
-            text-align: center;
-            color: white;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-            min-width: 110px;
-        }
-        .tabs label:hover { background-color: #34495e; }
-        input[type="radio"] { display: none; }
+        body {font-family:'Segoe UI',sans-serif;margin:0;background:#f0f4f8;color:#333;}
+        .container {max-width:1200px;margin:40px auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.15);}
 
-        .tab-content {
-            padding: 40px;
-            min-height: 450px;
-            display: none;
-            animation: fadeIn 0.4s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
+        /* ==== MAIN TABS ==== */
+        .tabs {display:flex;background:#2c3e50;flex-wrap:wrap;}
+        .tabs label {flex:1;padding:18px;text-align:center;color:#fff;cursor:pointer;font-weight:600;min-width:100px;transition:background .3s;}
+        .tabs label:hover {background:#34495e;}
+        input[type=radio] {display:none;}
 
-        /* Show active tab content */
-        #tab1:checked ~ .tab-content:nth-of-type(1),
-        #tab2:checked ~ .tab-content:nth-of-type(2),
-        #tab3:checked ~ .tab-content:nth-of-type(3),
-        #tab4:checked ~ .tab-content:nth-of-type(4),
-        #tab5:checked ~ .tab-content:nth-of-type(5),
-        #tab6:checked ~ .tab-content:nth-of-type(6) { display: block; }
+        .tab-content {padding:40px;min-height:550px;display:none;animation:fadeIn .5s;}
+        @keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
 
-        /* Active tab highlight */
-        #tab1:checked ~ .tabs label[for="tab1"],
-        #tab2:checked ~ .tabs label[for="tab2"],
-        #tab3:checked ~ .tabs label[for="tab3"],
-        #tab4:checked ~ .tabs label[for="tab4"],
-        #tab5:checked ~ .tabs label[for="tab5"],
-        #tab6:checked ~ .tabs label[for="tab6"] { background-color: #e74c3c; } /* Red accent for drama */
+        /* Show active main tab */
+        #tab1:checked ~ .tab-content:nth-of-type(1), #tab2:checked ~ .tab-content:nth-of-type(2),
+        #tab3:checked ~ .tab-content:nth-of-type(3), #tab4:checked ~ .tab-content:nth-of-type(4),
+        #tab5:checked ~ .tab-content:nth-of-type(5), #tab6:checked ~ .tab-content:nth-of-type(6),
+        #tab7:checked ~ .tab-content:nth-of-type(7) {display:block;}
 
-        h1, h2 { color: #2c3e50; }
-        ul { line-height: 1.8; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-        th { background-color: #f2f2f2; }
+        #tab1:checked ~ .tabs label[for=tab1], #tab2:checked ~ .tabs label[for=tab2],
+        #tab3:checked ~ .tabs label[for=tab3], #tab4:checked ~ .tabs label[for=tab4],
+        #tab5:checked ~ .tabs label[for=tab5], #tab6:checked ~ .tabs label[for=tab6],
+        #tab7:checked ~ .tabs label[for=tab7] {background:#e74c3c;}
+
+        /* ==== NESTED TABS (Safety Buoy) ==== */
+        .nested-tabs {display:flex;background:#34495e;margin:30px 0;border-radius:8px;overflow:hidden;}
+        .nested-tabs label {flex:1;padding:14px;text-align:center;color:#fff;cursor:pointer;font-weight:600;}
+        .nested-tabs label:hover {background:#2c3e50;}
+
+        .nested-content {padding:30px;background:#f9f9f9;border-radius:8px;display:none;}
+        #nested1:checked ~ .nested-content:nth-of-type(1),
+        #nested2:checked ~ .nested-content:nth-of-type(2),
+        #nested3:checked ~ .nested-content:nth-of-type(3),
+        #nested4:checked ~ .nested-content:nth-of-type(4) {display:block;}
+
+        #nested1:checked ~ .nested-tabs label[for=nested1],
+        #nested2:checked ~ .nested-tabs label[for=nested2],
+        #nested3:checked ~ .nested-tabs label[for=nested3],
+        #nested4:checked ~ .nested-tabs label[for=nested4] {background:#27ae60;}
+
+        h1,h2,h3{color:#2c3e50;}
+        .procedure{background:#fff;padding:18px;margin:15px 0;border-left:6px solid #27ae60;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+        table{width:100%;border-collapse:collapse;margin-top:20px;}
+        th,td{padding:12px;text-align:left;border-bottom:1px solid #ddd;}
+        th{background:#f2f2f2;}
     </style>
 </head>
 <body>
 
 <div class="container">
 
-    <!-- Radio buttons -->
+    <!-- MAIN RADIO BUTTONS -->
     <input type="radio" name="tabs" id="tab1" checked>
     <input type="radio" name="tabs" id="tab2">
     <input type="radio" name="tabs" id="tab3">
     <input type="radio" name="tabs" id="tab4">
     <input type="radio" name="tabs" id="tab5">
     <input type="radio" name="tabs" id="tab6">
+    <input type="radio" name="tabs" id="tab7">
 
-    <!-- Tab navigation -->
+    <!-- MAIN NAVIGATION -->
     <nav class="tabs">
         <label for="tab1">Home</label>
         <label for="tab2">What's New</label>
@@ -92,23 +72,26 @@
         <label for="tab4">Upcoming Events</label>
         <label for="tab5">About</label>
         <label for="tab6">The Bridge</label>
+        <label for="tab7">Safety Buoy</label>
     </nav>
 
-    <!-- Tab contents -->
+    <!-- TAB 1: Home -->
     <section class="tab-content">
-        <h1>Welcome Home!</h1>
-        <p>This is the <strong>Home</strong> tab. Your journey begins here.</p>
+        <h1>Welcome Aboard</h1>
+        <p>This is the central hub for the entire mission. Explore courses, meet the leadership, and stay safe with our procedures.</p>
     </section>
 
+    <!-- TAB 2: What's New -->
     <section class="tab-content">
         <h1>What's New</h1>
-        <p>Latest updates and announcements:</p>
         <ul>
-            <li><strong>Nov 2025</strong> – "The Bridge" tab revealed</li>
-            <li><strong>Oct 2025</strong> – Added Courses & Events</li>
+            <li><strong>Nov 2025</strong> – Launched "Safety Buoy" emergency protocols</li>
+            <li><strong>Oct 2025</strong> – The Bridge leadership fully staffed</li>
+            <li><strong>Sep 2025</strong> – New course catalog released</li>
         </ul>
     </section>
 
+    <!-- TAB 3: Courses -->
     <section class="tab-content">
         <h1>Our Courses</h1>
         <table>
@@ -121,74 +104,122 @@
         </table>
     </section>
 
+    <!-- TAB 4: Upcoming Events -->
     <section class="tab-content">
         <h1>Upcoming Events</h1>
         <ul>
-            <li><strong>Web Dev Bootcamp 2026</strong><br>Jan 15–17, 2026 | San Francisco</li>
-            <li><strong>Free CSS Grid Workshop</strong><br>Dec 5, 2025 | Online</li>
+            <li><strong>Web Dev Bootcamp 2026</strong> – Jan 15–17, 2026 | San Francisco</li>
+            <li><strong>Free CSS Grid Workshop</strong> – Dec 5, 2025 | Online</li>
         </ul>
     </section>
 
+    <!-- TAB 5: About -->
     <section class="tab-content">
         <h1>About Us</h1>
-        <p>We provide world-class web development education and community experiences.</p>
+        <p>We are a mission-driven organization dedicated to education, leadership, and safety at sea (and on the web).</p>
     </section>
 
-    <!-- NEW TAB: The Bridge -->
-    <!-- THE BRIDGE TAB – Full Command Team -->
-<section class="tab-content">
-    <h1 style="font-size: 3em; color: #e74c3c; text-align: center; margin-bottom: 10px;">
-        The Bridge
-    </h1>
-    <p style="font-size: 1.4em; text-align: center; max-width: 800px; margin: 20px auto 70px; line-height: 1.8; color: #555;">
-        Command. Communication. Education.<br>
-        The leadership triad guiding the mission.
-    </p>
+    <!-- TAB 6: The Bridge (Leadership) -->
+    <section class="tab-content">
+        <h1 style="font-size:3em;color:#e74c3c;text-align:center;">The Bridge</h1>
+        <p style="text-align:center;font-size:1.4em;max-width:800px;margin:20px auto 70px;color:#555;">
+            Command. Communication. Education.<br>The leadership triad guiding the mission.
+        </p>
 
-    <!-- Executive Team Grid – 3 columns on desktop, stacks on mobile -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1100px;margin:0 auto;">
 
-        <!-- Troy Otis – Commander -->
-        <div style="text-align: center; background: linear-gradient(135deg, #2c3e50, #1a2530); color: white; padding: 45px 30px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
-            <div style="width: 160px; height: 160px; background: #e74c3c; color: white; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3.2em; font-weight: bold; border: 7px solid #fff; box-shadow: 0 0 25px rgba(231,76,60,0.7);">
-                TO
+            <!-- Troy Otis -->
+            <div style="text-align:center;background:linear-gradient(135deg,#2c3e50,#1a2530);color:white;padding:45px 30px;border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,0.5);">
+                <div style="width:160px;height:160px;background:#e74c3c;color:white;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:3.2em;font-weight:bold;border:7px solid #fff;box-shadow:0 0 25px rgba(231,76,60,0.7);">TO</div>
+                <h3 style="margin:15px 0 8px;font-size:1.9em;color:#fff;">Troy Otis</h3>
+                <p style="color:#e74c3c;font-weight:900;font-size:1.5em;letter-spacing:2px;">COMMANDER</p>
             </div>
-            <h3 style="margin: 15px 0 8px; font-size: 1.9em; color: #fff;">Troy Otis</h3>
-            <p style="color: #e74c3c; font-weight: 900; font-size: 1.5em; letter-spacing: 2px; margin: 0;">
-                COMMANDER
-            </p>
+
+            <!-- Steven Brewer -->
+            <div style="text-align:center;background:#f8f9fa;padding:45px 30px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.15);border:4px solid #3498db;">
+                <div style="width:160px;height:160px;background:#3498db;color:white;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:3.2em;font-weight:bold;border:7px solid #fff;">SB</div>
+                <h3 style="margin:15px 0 8px;font-size:1.8em;">Steven Brewer</h3>
+                <p style="color:#3498db;font-weight:800;font-size:1.3em;letter-spacing:1px;">COMMUNICATIONS OFFICER</p>
+            </div>
+
+            <!-- Gaston Damecour -->
+            <div style="text-align:center;background:#f8f9fa;padding:45px 30px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.15);border:4px solid #27ae60;">
+                <div style="width:160px;height:160px;background:#27ae60;color:white;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:3.2em;font-weight:bold;border:7px solid #fff;">GD</div>
+                <h3 style="margin:15px 0 8px;font-size:1.8em;">Gaston Damecour</h3>
+                <p style="color:#27ae60;font-weight:800;font-size:1.3em;letter-spacing:1px;">EDUCATION OFFICER</p>
+            </div>
+
         </div>
 
-        <!-- Steven Brewer – Communications Officer -->
-        <div style="text-align: center; background: #f8f9fa; padding: 45px 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 4px solid #3498db;">
-            <div style="width: 160px; height: 160px; background: #3498db; color: white; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3.2em; font-weight: bold; border: 7px solid #fff;">
-                SB
-            </div>
-            <h3 style="margin: 15px 0 8px; font-size: 1.8em; color: #2c3e50;">Steven Brewer</h3>
-            <p style="color: #3498db; font-weight: 800; font-size: 1.3em; letter-spacing: 1px; margin: 0;">
-                COMMUNICATIONS OFFICER
-            </p>
+        <div style="text-align:center;margin-top:90px;font-size:1.5em;color:#2c3e50;font-weight:bold;">
+            The Bridge is fully staffed.<br>
+            <span style="color:#e74c3c;font-size:1.2em;">The mission begins now.</span>
+        </div>
+    </section>
+
+    <!-- TAB 7: Safety Buoy (with nested tabs) -->
+    <section class="tab-content">
+        <h1 style="font-size:3em;color:#27ae60;text-align:center;">Safety Buoy</h1>
+        <p style="text-align:center;font-size:1.3em;max-width:800px;margin:20px auto 40px;">
+            Emergency procedures and life-saving protocols for all crew and passengers.
+        </p>
+
+        <!-- NESTED RADIO BUTTONS -->
+        <input type="radio" name="nested" id="nested1" checked>
+        <input type="radio" name="nested" id="nested2">
+        <input type="radio" name="nested" id="nested3">
+        <input type="radio" name="nested" id="nested4">
+
+        <!-- NESTED NAVIGATION -->
+        <nav class="nested-tabs">
+            <label for="nested1">Man Overboard</label>
+            <label for="nested2">Fire Response</label>
+            <label for="nested3">Medical Emergency</label>
+            <label for="nested4">Abandon Ship</label>
+        </nav>
+
+        <!-- NESTED CONTENTS -->
+        <div class="nested-content">
+            <h2>Man Overboard Procedure</h2>
+            <div class="procedure"><strong>1.</strong> Shout “MAN OVERBOARD!” + port/starboard</div>
+            <div class="procedure"><strong>2.</strong> Throw life ring & deploy flotation device</div>
+            <div class="procedure"><strong>3.</strong> Assign dedicated spotter – never lose visual</div>
+            <div class="procedure"><strong>4.</strong> Activate MOB on GPS/plotter</div>
+            <div class="procedure"><strong>5.</strong> Execute Williamson turn or immediate return maneuver</div>
+            <div class="procedure"><strong>6.</strong> Deploy rescue boat if conditions allow</div>
         </div>
 
-        <!-- Gaston Damecour – Education Officer -->
-        <div style="text-align: center; background: #f8f9fa; padding: 45px 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 4px solid #27ae60;">
-            <div style="width: 160px; height: 160px; background: #27ae60; color: white; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3.2em; font-weight: bold; border: 7px solid #fff;">
-                GD
-            </div>
-            <h3 style="margin: 15px 0 8px; font-size: 1.8em; color: #2c3e50;">Gaston Damecour</h3>
-            <p style="color: #27ae60; font-weight: 800; font-size: 1.3em; letter-spacing: 1px; margin: 0;">
-                EDUCATION OFFICER
-            </p>
+        <div class="nested-content">
+            <h2>Fire Response Protocol</h2>
+            <div class="procedure"><strong>1.</strong> Sound continuous fire alarm</div>
+            <div class="procedure"><strong>2.</strong> Announce location over PA</div>
+            <div class="procedure"><strong>3.</strong> Attempt to extinguish with nearest extinguisher (if safe)</div>
+            <div class="procedure"><strong>4.</strong> Close doors & vents to contain fire</div>
+            <div class="procedure"><strong>5.</strong> Activate fixed CO₂ or water mist system (if applicable)</div>
+            <div class="procedure"><strong>6.</strong> Prepare for possible evacuation</div>
         </div>
 
-    </div>
+        <div class="nested-content">
+            <h2>Medical Emergency</h2>
+            <div class="procedure"><strong>1.</strong> Call “MEDICAL EMERGENCY” + location</div>
+            <div class="procedure"><strong>2.</strong> Administer first aid / CPR if trained</div>
+            <div class="procedure"><strong>3.</strong> Retrieve AED and medical kit</div>
+            <div class="procedure"><strong>4.</strong> Contact shore medical advisory service via radio/satellite</div>
+            <div class="procedure"><strong>5.</strong> Prepare for medevac if required</div>
+        </div>
 
-    <div style="text-align: center; margin-top: 90px; font-size: 1.5em; color: #2c3e50; font-weight: bold;">
-        The Bridge is fully staffed.<br>
-        <span style="color: #e74c3c; font-size: 1.2em;">The mission begins now.</span>
-    </div>
-</section>
+        <div class="nested-content">
+            <h2>Abandon Ship Procedure</h2>
+            <div class="procedure"><strong>1.</strong> Commander orders “ABANDON SHIP”</div>
+            <div class="procedure"><strong>2.</strong> Sound 7 short + 1 long blast</div>
+            <div class="procedure"><strong>3.</strong> Don life jackets</div>
+            <div class="procedure"><strong>4.</strong> Transmit Mayday on VHF Ch. 16 & SSB</div>
+            <div class="procedure"><strong>5.</strong> Launch liferafts & survival suits</div>
+            <div class="procedure"><strong>6.</strong> Take EPIRB, SART, grab bag, and water</div>
+            <div class="procedure"><strong>7.</strong> Stay together and await rescue</div>
+        </div>
+    </section>
+
 </div>
-
 </body>
 </html>
