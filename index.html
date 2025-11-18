@@ -3,63 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-
-    <!-- ==== FAVICON FROM CANBOAT.CA ==== -->
-    <link rel="icon" href="https://canboat.ca/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://canboat.ca/favicon.ico" type="image/x-icon">
-    <!-- Optional: higher-resolution versions they also provide -->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://canboat.ca/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://canboat.ca/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://canboat.ca/favicon-16x16.png">
-    <!-- ================================== -->
-
+    <title>The Helm – November 2025 | Fredericton Squadron</title>
     <style>
         body {
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            height: 100vh;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header-img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+        }
+        .tabs {
+            overflow: hidden;
+            background-color: #003087;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .tabs button {
+            background: none;
+            border: none;
             color: white;
-            text-align: center;
+            padding: 16px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
         }
-        .container {
-            padding: 40px 60px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        .tabs button:hover { background-color: #0050b3; }
+        .tabs button.active { background-color: #0050b3; font-weight: bold; }
+        .tabcontent {
+            display: none;
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            animation: fade 0.8s;
         }
-        h1 {
-            font-size: 6rem;
-            margin: 0;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        }
-        p {
-            font-size: 1.5rem;
-            margin-top: 20px;
-            opacity: 0.9;
-        }
-        .wave {
-            animation: wave 2s infinite;
-            display: inline-block;
-        }
-        @keyframes wave {
-            0%, 100% { transform: rotate(0deg); }
-            20% { transform: rotate(15deg); }
-            40% { transform: rotate(-10deg); }
-            60% { transform: rotate(10deg); }
-            80% { transform: rotate(-5deg); }
+        .tabcontent.active { display: block; }
+        @keyframes fade { from {opacity:0;} to {opacity:1;} }
+        h1, h2 { color: #003087; }
+        a { color: #0050b3; }
+        ul { padding-left: 20px; }
+        @media (max-width: 768px) {
+            .tabs button { padding: 12px 15px; font-size: 0.95rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello <span class="wave">👋</span> World!</h1>
-        <p>Your very first website is alive!</p>
+
+    <img src="https://images.unsplash.com/photo-1569261879902-63c2e3e1e7b6?w=1600&q=80&fit=crop" 
+         alt="Sailboat on the Saint John River at sunrise" class="header-img">
+
+    <div class="tabs">
+        <button class="tablinks active" onclick="openTab(event,'Welcome')">Welcome Aboard</button>
+        <button class="tablinks" onclick="openTab(event,'ChartRoom')">Chart Room – Courses</button>
+        <button class="tablinks" onclick="openTab(event,'CommandersNotes')">Commander’s Notes</button>
+        <button class="tablinks" onclick="openTab(event,'SafetyBuoy')">Safety Buoy</button>
+        <button class="tablinks" onclick="openTab(event,'OnTheHorizon')">On the Horizon</button>
+        <button class="tablinks" onclick="openTab(event,'CaptainsLog')">Captain’s Log</button>
+        <button class="tablinks" onclick="openTab(event,'BearingsTales')">Bearings & Tales</button>
+        <button class="tablinks" onclick="openTab(event,'ComeAboard')">Come Aboard – Join Us</button>
+        <button class="tablinks" onclick="openTab(event,'Chuckles')">Chuckles on the Poop Deck</button>
+        <button class="tablinks" onclick="openTab(event,'Canboat')">About CanBoat / NautiSavoir</button>
     </div>
+
+    <div id="Welcome" class="tabcontent active">
+        <h1>The Helm – November 2025</h1>
+        <p><strong>Our Fredericton Squadron newsletter returns after a 13-year “Turn in”</strong></p>
+        <p>The Binnacle—the cherished newsletter capturing the rippling yarns, current charts, and riverine rambles of boating aficionados along New Brunswick's storied Saint John River—has joyfully returned this November, as <strong>The Helm</strong>. Once a go-to guide for cruisers meandering past the heritage charm of Fredericton, and anglers casting lines in the tidal reaches near Reversing Falls.</p>
+        <p>This revival anchors just after the autumn leaves blaze along the banks, brimming with fresh tales of final salmon runs, winterized wooden dories, and the crisp hush of frost-kissed sunrises over the Kennebecasis Valley. For river rats who've longed for its weathered pages.</p>
+        <p>“The Helm” is provided in a mobile-friendly format.<br><strong>Enjoy, mates!</strong></p>
+        <p><em>Steven Brewer, Communications Officer, Fredericton Squadron</em></p>
+    </div>
+
+    <div id="ChartRoom" class="tabcontent">
+        <h1>Chart Room – Learning & Courses</h1>
+        <h2>Upcoming Courses</h2>
+        <p><strong>Nov 25, 2025 – Basic Navigation & Boat Handling</strong><br>Hands-On Skills for Safe Boating</p>
+        <ul>
+            <li>When: Tuesdays, starting November 25, 2025 | 7–9 PM (12 weeks)</li>
+            <li>Where: University of New Brunswick (UNB), Room TBA</li>
+            <li>Member Registration $236 → <a href="https://tinyurl.com/MemberBNBH">Register</a></li>
+            <li>Non-Member Registration $295 → <a href="https://tinyurl.com/NonMemberBNBH">Register</a></li>
+        </ul>
+        <p><strong>Nov 15, 2025 One-Day Marine Diesel Seminar</strong> (Cancelled due to injury)<br>Will be rescheduled – reservations will be honoured. Stay tuned!<br>Email: <a href="mailto:506Boat@Gmail.com">506Boat@Gmail.com</a></p>
+    </div>
+
+    <div id="CommandersNotes" class="tabcontent">
+        <h1>Commander’s Notes</h1>
+        <h2>Keeping the Boating Spirit Afloat This Winter</h2>
+        <p>As we tuck our boats away on the hard for the season, your local CPS Fredericton Squadron is busy keeping the adventure alive with a lineup of courses and events to warm the winter months…</p>
+        <p>(Full text from the newsletter here – welcoming the new board, thanks to Steven Brewer for reviving the newsletter, and invitation to stay connected.)</p>
+        <p><em>“Don’t be so busy that you can’t remember if you found a rope on the beach or lost your boat”</em><br><strong>Troy Otis<br>Commander, Fredericton Squadron</strong></p>
+    </div>
+
+    <div id="SafetyBuoy" class="tabcontent">
+        <h1>Safety Buoy – Tip of the Month</h1>
+        <h2>“Know Before You Go”</h2>
+        <p>Before setting sail, always check the marine weather forecast. Sudden changes in wind and wave conditions can turn a pleasant cruise into a risky situation. Bookmark the Canadian Marine Weather Service and keep a VHF radio tuned to channel 16.</p>
+    </div>
+
+    <div id="OnTheHorizon" class="tabcontent">
+        <h1>On the Horizon – Upcoming Events</h1>
+        <ul>
+            <li><strong>November Boat Talk:</strong> Emergency Incident Handling – Expert Panel<br>Nov 19 • 7:00 PM • Dolan’s Pub</li>
+            <li><strong>Christmas Party</strong><br>Dec 4 • 6:00 PM • The Nest (Above the Cap)</li>
+            <li><strong>January Boat Talk:</strong> Knotty Night<br>Jan 21, 2026 • 7:00 PM • Dolan’s Pub</li>
+            <li><strong>February Boat Talk:</strong> Fire Safety<br>Feb 18, 2026 • 7:00 PM • Dolan’s Pub</li>
+            <li><strong>March Boat Talk:</strong> Season Preparation<br>Mar 18, 2026 • 7:00 PM • Dolan’s Pub</li>
+            <li><strong>April Boat Talk:</strong> Trivia Night<br>Apr 15, 2026 • 7:00 PM • Dolan’s Pub</li>
+        </ul>
+    </div>
+
+    <div id="CaptainsLog" class="tabcontent">
+        <h1>Captain’s Log – Recent Events</h1>
+        <p><strong>Oct 2025 Winterization Boat Talk</strong><br>22 engaged boaters – one of our “best ever” Boat Talks!</p>
+        <p>Topics included antifreeze choices, battery care, fuel additives, bilge practices, moisture control, potable water systems, dryer sheets, sea strainers, and more.</p>
+    </div>
+
+    <div id="BearingsTales" class="tabcontent">
+        <h1>Bearings & Tales – Member Adventures</h1>
+        <p>Check out the YouTube channel <strong>Beyond the Buoys</strong> (@BeyondthebuoyswithAnM) by Fredericton Squadron members Andrea and Mike.</p>
+        <p>Their 1979 Mainship MK1 trawler journey from Québec to New Brunswick this summer is documented in entertaining daily-ish vlogs – perfect winter watching!</p>
+    </div>
+
+    <div id="ComeAboard" class="tabcontent">
+        <h1>Come Aboard – Join Us!</h1>
+        <p>Whether you're a powerboater, sailor, paddler, or landlubber with a love for the water, the Fredericton Squadron welcomes you.</p>
+        <p>Membership perks: training, social events, discounts, and a great community of mariners.</p>
+        <p>Find us on Facebook!</p>
+    </div>
+
+    <div id="Chuckles" class="tabcontent">
+        <h1>Chuckles on the Poop Deck</h1>
+        <p><strong>An expensive snore cure</strong><br>(The classic doctor/yacht joke – full text from newsletter)</p>
+    </div>
+
+    <div id="Canboat" class="tabcontent">
+        <h1>CanBoat / NautiSavoir</h1>
+        <p>A Community Of Experienced Boaters Inspiring Others<br>Canada’s national non-profit boating education organization since 1938.</p>
+        <p>Offers the only Canadian boating card accepted by the U.S. Coast Guard, plus advanced courses, insurance discounts, and much more.</p>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            const tabcontent = document.getElementsByClassName("tabcontent");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            const tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>
