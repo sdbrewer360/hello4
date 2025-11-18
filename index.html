@@ -18,12 +18,15 @@
             object-fit: cover;
         }
         .tabs {
-            overflow:hidden;
+            overflow: hidden;
             background-color: #003087;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         .tabs button {
             background: none;
@@ -38,26 +41,28 @@
         .tabs button.active { background-color: #0050b3; font-weight: bold; }
         .tabcontent {
             display: none;
-            padding: 40px 20px;
+            padding: 50px 20px;
             max-width: 1000px;
             margin: 0 auto;
             background: white;
-            animation: fade 0.8s;
+            min-height: 70vh;
         }
-        .tabcontent.active { display: block; }
+        .tabcontent.active { display: block; animation: fade 0.8s; }
         @keyframes fade { from {opacity:0;} to {opacity:1;} }
         h1, h2, h3 { color: #003087; }
-        a { color: #0050b3; }
-        ul { padding-left: 20px; }
+        a { color: #0050b3; text-decoration: underline; }
+        ul { padding-left: 25px; }
+        hr { border: 1px solid #003087; margin: 40px 0; }
         @media (max-width: 768px) {
             .tabs button { padding: 12px 15px; font-size: 0.95rem; }
+            .tabcontent { padding: 30px 15px; }
         }
     </style>
 </head>
 <body>
 
     <img src="https://images.unsplash.com/photo-1569261879902-63c2e3e1e7b6?w=1600&q=80&fit=crop" 
-         alt="Sailboat on the Saint John River" class="header-img">
+         alt="Sailboat on the Saint John River at sunrise" class="header-img">
 
     <div class="tabs">
         <button class="tablinks active" onclick="openTab(event,'Welcome')">Welcome Aboard</button>
@@ -66,55 +71,85 @@
         <button class="tablinks" onclick="openTab(event,'OnTheHorizon')">On the Horizon</button>
         <button class="tablinks" onclick="openTab(event,'CaptainsLog')">Captain’s Log</button>
         <button class="tablinks" onclick="openTab(event,'BearingsTales')">Bearings & Tales</button>
-        <button class="tablinks" onclick="openTab(event,'Canboat')">About CanBoat / NautiSavoir</button>
+        <button class="tablinks" onclick="openTab(event,'Canboat')">About CanBoat</button>
     </div>
 
-    <!-- WELCOME ABOARD (now includes Come Aboard content) -->
+    <!-- Welcome Aboard + Come Aboard merged -->
     <div id="Welcome" class="tabcontent active">
         <h1>The Helm – November 2025</h1>
         <p><strong>Our Fredericton Squadron newsletter returns after a 13-year “Turn in”</strong></p>
-        <p>The Binnacle—the cherished newsletter capturing the rippling yarns, current charts, and riverine rambles of boating aficionados along New Brunswick's storied Saint John River—has joyfully returned this November, as <strong>The Helm</strong>. Once a go-to guide for cruisers meandering past the heritage charm of Fredericton, and anglers casting lines in the tidal reaches near Reversing Falls.</p>
-        <p>This revival anchors just after the autumn leaves blaze along the banks, brimming with fresh tales of final salmon runs, winterized wooden dories, and the crisp hush of frost-kissed sunrises over the Kennebecasis Valley. For river rats who've longed for its weathered pages.</p>
+        <p>The Binnacle—the cherished newsletter capturing the rippling yarns, current charts, and riverine rambles of boating aficionados along New Brunswick's storied Saint John River—has joyfully returned this November, as <strong>The Helm</strong>.</p>
+        <p>Once a go-to guide for cruisers meandering past the heritage charm of Fredericton, and anglers casting lines in the tidal reaches near Reversing Falls. This revival anchors just after the autumn leaves blaze along the banks, brimming with fresh tales of final salmon runs, winterized wooden dories, and the crisp hush of frost-kissed sunrises over the Kennebecasis Valley. For river rats who've longed for its weathered pages.</p>
         <p>“The Helm” is provided in a mobile-friendly format.<br><strong>Enjoy, mates!</strong></p>
         <p><em>Steven Brewer, Communications Officer, Fredericton Squadron</em></p>
 
-        <hr style="margin: 40px 0; border: 1px solid #003087;">
+        <hr>
 
         <h2>Come Aboard – Join Us!</h2>
-        <p>Whether you're a powerboater, sailor, paddler, or landlubber with a love for the water, the Fredericton Squadron welcomes you!</p>
+        <p>Whether you're a powerboater, sailor, paddler, or landlubber with a love for the water, the Fredericton Squadron welcomes you.</p>
         <p><strong>Membership Perks:</strong></p>
         <ul>
             <li>Access to training and certifications</li>
             <li>Social events and regattas</li>
             <li>A community of passionate mariners</li>
-            <li>Discounts on Canboat merchandise, insurance, courses, and more</li>
+            <li>Discounts on CanBoat merchandise, insurance, courses, marine assistance, and more</li>
         </ul>
-        <p>Check out our <a href="https://www.facebook.com" target="_blank">Facebook page</a> and come join the fun!</p>
+        <p>Check out our Facebook page and come join the fun!</p>
     </div>
 
     <div id="ChartRoom" class="tabcontent">
         <h1>Chart Room – Learning & Courses</h1>
-        … (unchanged – same as previous version)
+        <h2>Upcoming Courses</h2>
+        <p><strong>Nov 25, 2025 – Basic Navigation & Boat Handling</strong><br>Hands-On Skills for Safe Boating</p>
+        <ul>
+            <li>When: Tuesdays, starting November 25, 2025 | 7–9 PM (12 weeks)</li>
+            <li>Where: University of New Brunswick (UNB), Room TBA (details forthcoming)</li>
+            <li>Member Registration $236 → <a href="https://tinyurl.com/MemberBNBH" target="_blank">Register Here</a></li>
+            <li>Non-Member Registration $295 → <a href="https://tinyurl.com/NonMemberBNBH" target="_blank">Register Here</a></li>
+        </ul>
+
+        <p><strong>One-Day Marine Diesel Seminar</strong> (Originally Nov 15 – Cancelled due to injury)<br>
+        Will be rescheduled. All existing registrations will be honoured. Stay tuned!<br>
+        Contact: <a href="mailto:506Boat@Gmail.com">506Boat@Gmail.com</a></p>
     </div>
 
     <div id="SafetyBuoy" class="tabcontent">
-        … (unchanged)
+        <h1>Safety Buoy – Tip of the Month</h1>
+        <h2>“Know Before You Go”</h2>
+        <p>Before setting sail, always check the marine weather forecast. Sudden changes in wind and wave conditions can turn a pleasant cruise into a risky situation. Bookmark the Canadian Marine Weather Service and keep a VHF radio tuned to channel 16.</p>
     </div>
 
     <div id="OnTheHorizon" class="tabcontent">
-        … (unchanged)
+        <h1>On the Horizon – Upcoming Events</h1>
+        <ul>
+            <li><strong>November Boat Talk:</strong> Emergency Incident Handling – Expert Panel<br>Date: November 19, 2025 • 7:00 PM • Dolan’s Pub, Fredericton</li>
+            <li><strong>Christmas Party</strong><br>Date: December 4, 2025 • 6:00 PM • The Nest (Above the Cap), Fredericton<br>Live Music!</li>
+            <li><strong>January Boat Talk:</strong> Knotty Night<br>Jan 21, 2026 • 7:00 PM • Dolan’s Pub<br>Bring your favourite line (rope provided)</li>
+            <li><strong>February Boat Talk:</strong> Fire Safety<br>Feb 18, 2026 • 7:00 PM • Dolan’s Pub</li>
+            <li><strong>March Boat Talk:</strong> Season Preparation<br>Mar 18, 2026 • 7:00 PM • Dolan’s Pub</li>
+            <li><strong>April Boat Talk:</strong> Trivia Night<br>Apr 15, 2026 • 7:00 PM • Dolan’s Pub</li>
+        </ul>
     </div>
 
     <div id="CaptainsLog" class="tabcontent">
-        … (unchanged)
+        <h1>Captain’s Log – Recent Events</h1>
+        <p><strong>October 2025 Winterization Boat Talk</strong><br>22 engaged boaters made it one of our “best ever” Boat Talks!</p>
+        <p>Topics included:<br>
+        Which antifreeze and where • Battery care • Fuel additives • Best bilge practices • Minimizing moisture • Potable water systems • Dryer sheets • Sea strainers • and more!</p>
     </div>
 
     <div id="BearingsTales" class="tabcontent">
-        … (unchanged)
+        <h1>Bearings & Tales – Member Adventures</h1>
+        <p>Check out the YouTube channel <strong>Beyond the Buoys</strong> (<a href="https://www.youtube.com/@BeyondthebuoyswithAnM" target="_blank">@BeyondthebuoyswithAnM</a>) by Fredericton Squadron members Andrea and Mike.</p>
+        <p>Their 1979 Mainship MK1 trawler delivery trip from Québec to New Brunswick (via the St. Lawrence, Gaspé, Northumberland Strait, Canso Strait, Bay of Fundy, and Reversing Falls) is documented in entertaining daily vlogs – perfect winter watching for all boaters!</p>
     </div>
 
     <div id="Canboat" class="tabcontent">
-        … (unchanged)
+        <h1>About CanBoat / NautiSavoir</h1>
+        <p><strong>A Community Of Experienced Boaters Inspiring Others</strong></p>
+        <p>Operated by Canadian Power and Sail Squadrons (CPS-ECP), CanBoat is Canada’s national non-profit boating education organization since 1938.</p>
+        <p>Offers the only Canadian-issued Pleasure Craft Operator Card (PCOC) accepted by the U.S. Coast Guard, plus advanced courses, insurance discounts (boat, home, auto), marine merchandise, on-water assistance, and much more.</p>
+        <p>Visit <a href="https://www.canboat.ca" target="_blank">CanBoat.ca</a> for courses and membership.</p>
     </div>
 
     <script>
